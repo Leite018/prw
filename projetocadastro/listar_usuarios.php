@@ -19,22 +19,29 @@
     <table align="center" border="1" width="500">
         <tr>
             <th>Codigo</th>
+            <th>Foto</th>
             <th>Nome</th>
             <th>E-mail</th>
             <th>Telefone</th>
         </tr>
     
     <?php
-     do{
-     echo "<tr>";
-     echo "<td>".$row['id_usuario']."</td>";
-     echo "<td>".$row['nome_usuario']."</td>";
-     echo "<td>".$row['email_usuario']."</td>";
-     echo "<td>".$row['fone_usuario']."</td>";
-     echo "<td> <a href='alterar_usuario.php?id_usuario=".$row['id_usuario']. "'>Alterar</a> </td>";
-     echo "<td> <a href='deletar_usuario.php?id_usuario=".$row['id_usuario']. "'>Deletar</a> </td>";
-     echo "</tr>";
-     }while($row = mysqli_fetch_array($result))
+    do{
+    echo "<tr>";
+    echo "<td>".$row['id_usuario']."</td>";
+    if($row['foto'] == ""){
+       echo "<td></td>";
+    }
+    else{
+    echo "<td><img src='" .$row['foto']. "' width='80' height='100'/></td>";
+    }
+    echo "<td>".$row['nome_usuario']."</td>";
+    echo "<td>".$row['email_usuario']."</td>";
+    echo "<td>".$row['fone_usuario']."</td>";
+    echo "<td> <a href='alterar_usuario.php?id_usuario=".$row['id_usuario']. "'>Alterar</a> </td>";
+    echo "<td> <a href='deletar_usuario.php?id_usuario=".$row['id_usuario']. "'>Deletar</a> </td>";
+    echo "</tr>";
+    }while($row = mysqli_fetch_array($result))
     ?>
     <a href="index.php">Voltar</a>
 </table>

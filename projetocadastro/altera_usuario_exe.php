@@ -5,6 +5,7 @@
     $email = $_POST['email'];
     $fone = $_POST['fone'];
     $senha = $_POST['senha'];
+    $foto = $_FILES['foto'];
 
     echo "<h1>Alteração de dados </h1>";
     echo "<p>Usuario: $nome</p>";
@@ -12,7 +13,8 @@
         nome_usuario = '$nome',
         email_usuario = '$senha',
         fone_usuario = '$fone',
-        senha = '$senha'
+        senha = '$senha',
+        foto = '$foto'
 
         WHERE id_usuario = $id_usuario";
 

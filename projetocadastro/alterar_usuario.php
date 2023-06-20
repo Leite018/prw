@@ -16,7 +16,7 @@
 <body>
     <!--  http://localhost/prw/projetocadastro/alterar_usuario.php -->
     <h1>Cadastro de Usuarios - IFSP</h1>
-    <form action="altera_usuario_exe.php" method="POST" >
+    <form action="altera_usuario_exe.php" method="Post" enctype="multipart/form-data" >
         <input name="id_usuario" type="hidden"
         value="<?php echo $row ['id_usuario'] ?>">
 
@@ -42,6 +42,11 @@
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha"
             value="<?php echo $row['senha'] ?>">
+        </div>
+        <div>
+            <label for="foto">foto</label>
+            <input type="file" name="foto" id="foto" accept="image/*"
+            value="<?php echo $row['foto'] ?>">
         </div>
         <div>
             <input type="submit" value="Salvar">
